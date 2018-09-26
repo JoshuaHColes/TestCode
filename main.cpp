@@ -1,3 +1,18 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+int PntrsEx();
+
+int main()
+{
+    PntrsEx();
+    
+    return 0;
+}
+
 int PntrsEx()
 {
     // example 1:
