@@ -1,36 +1,15 @@
-#include <iostream>
-#include <string>
-#include <cmath>
-
-
-/* main calls to a constructor in the class ---> string 'z' defined in constructor ---> PublicFunc' assigned var 'z'
- ---> 'x' defined in 'PublicFunc' and assigned to 'PrivString' variable ---> 'PrivString' is returned in GetString */
-class TestClass
+int PntrsEx()
 {
-    public:
-        TestClass(std::string z) // constructor. Usually used to give variable a value
-        {
-            PublicFunc(z);
-        }
-        void PublicFunc(std::string x)
-        {
-            PrivString = x;
-        }
-        std::string GetString()
-        {
-            return PrivString;
-        }
+    // example 1:
+    int x = 25;
+    int* p = &x; // '*p' is an alias for 'x'
+    cout << endl << p << endl << endl; // &var is used to find the address of a variable. In this case we are finding the address of 'x'
+    cout << *p << endl << endl; // *var is used to get the value of the address held by the pointer, in this case 'p' is the pointer
 
-    private:
-        std::string PrivString; // defines the function and can't be accessed outside of the class until called properly
-};
-
-
-int main()
-{
-    TestClass TestObject("Test");
-    TestObject.GetString();
-    std::cout << std::endl << TestObject.GetString() << std::endl << std::endl;
+    // example 2:
+    int Score = 5;
+    int* ScorePtr = &Score; // the pointer 'ScorePtr' is assigned the address/memory allocation of 'Score' (&Score)
+    cout << ScorePtr << endl << endl; // the pointer is printed
 
     return 0;
 }
